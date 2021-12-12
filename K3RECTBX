@@ -1,0 +1,32 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+        pair <int , int> p;
+        int t,h,w,r,temp=INT_MAX,c=0;
+        cin>>t;
+        while(t--){
+                cin>>h>>w;
+                p.first=h;
+                p.second=w;
+                r=(p.first>p.second)?p.first:p.second;
+                if(r<=temp){
+                        temp=r;
+                }
+                else{
+                        r=(p.first>p.second)?p.second:p.first;
+                        if(!(r<=temp))
+                       { c++;
+                        break;
+                       }
+                }
+        }
+        if(!c){
+                cout<<"YES\n";
+        }
+        else
+        cout<<"NO\n";
+        
+	return 0;
+}
